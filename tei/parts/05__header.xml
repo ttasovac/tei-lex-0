@@ -3,8 +3,6 @@
 <?xml-stylesheet type="text/css" href="../css/tei.lex0.odd.css"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="header">
    <head>Header</head>
-   <div>
-      <head>General remarks</head>
       <p>A lexical resource encoded in TEI Lex-0 must, like any TEI file, start with the root
             <gi>TEI</gi> element, which, in turn, must contain a <gi>teiHeader</gi> element.</p>
       <p>TEI Lex-0, unlike TEI P5, however, requires the <code>@type</code> attribute on the root
@@ -37,7 +35,6 @@
             <gi>profileDesc</gi>. It is highly recommended to include additional information in
             <gi>encodingDesc</gi>. It is also an example of good practice to record changes in
             <gi>revisionDesc</gi>. </p>
-   </div>
    <div xml:id="file-description">
       <head>File description</head>
       <p>The bibliographic description of the given machine-readable lexical resource is absolutely
@@ -92,7 +89,7 @@
                   <val>rightsHolder</val>.</item>
          </list>
       </p>
-      <div>
+      <div xml:id="header.source-description">
          <head>Source description</head>
          <p>In TEI Lex-0, <gi>sourceDesc</gi> is an optional element. Born-digital resources or
             those which cannot be properly sourced do not require a <gi>sourceDesc</gi>. </p>
@@ -167,7 +164,7 @@
             (<val>objectLanguage</val>, <val>workingLanguage</val>, <val>sourceLanguage</val> or
             <val>targetLanguage</val>), see the specification details for <gi>language</gi>. </p>
    </div>
-   <div>
+   <div xml:id="header.revision-description">
       <head>Revision description</head>
       <p><gi>revisionDesc</gi> is optional in both TEI and TEI Lex-0. The element is used to
          document the revision history of the given file. For each recorded revision, one should use
