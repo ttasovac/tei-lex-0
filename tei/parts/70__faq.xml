@@ -2,10 +2,10 @@
 <?xml-stylesheet type="text/css" href="../css/tei_oxygen.css"?>
 <?xml-stylesheet type="text/css" href="../css/tei.lex0.odd.css"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:teix="http://www.tei-c.org/ns/Examples" xml:id="contribute">
+    xmlns:teix="http://www.tei-c.org/ns/Examples" xml:id="faq">
     <head>Frequently Asked Questions</head>
 
-    <div>
+    <div xml:id="faq.get-started">
         <head>How do I start using TEI Lex-0 in my project?</head>
         <p>To start using TEI Lex-0 in your own dictionary project, you need to set up your favorite
             XML editor to validate your dictionary against the TEI Lex-0 schema. This, you can
@@ -45,7 +45,7 @@
             editor to validate it.</p>
     </div>
 
-    <div>
+    <div xml:id="faq.who-to-ask">
         <head>What should I do if I don't know how to encode something in TEI Lex-0?</head>
         <p>TEI Lex-0 is a community-based project. If you have a question or need help encoding
             lexicographic data using TEI Lex-0, get in touch using our <ref
@@ -53,11 +53,11 @@
             here on GitHub.</p>
     </div>
 
-    <div>
+    <div xml:id="faq.how-to-contribute">
         <head>How can I contribute to the development of TEI Lex-0?</head>
         <p>More advanced users can propose solutions by submitting pull requests. Make sure you
             understand the internal nitty-gritty as well as our GitHub workflow.</p>
-    <div>
+    <div xml:id="faq.contribute.nitty-gritty">
         <head>The internal nitty-gritty</head>
 
         <list>
@@ -103,7 +103,7 @@
                 step, the examples in your ODD file will not validate.</item>
         </list>
     </div>
-    <div>
+    <div xml:id="faq.contribute.github-workflow">
         <head>GitHub Workflow</head>
         <p>Before submitting your proposal to change something in the TEI Lex-0 specification or the
             narrative guidelines, make sure: <list>
@@ -143,7 +143,7 @@
         </p>
     </div>
     </div>
-<div>
+<div xml:id="faq.convert-to-ontolex-lemon">
     <head>How can I convert dictionaries from TEI Lex-0 to Ontolex-Lemon?</head>
     <p>Funny you should ask, because we have exactly what you're looking for. Check out the <ref target="https://github.com/elexis-eu/tei2ontolex">tei2ontolex</ref> stylesheet. </p>
 </div>

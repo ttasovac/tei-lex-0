@@ -8,7 +8,7 @@
         suggest ways in which the elements, in particular <gi>form</gi>, can be constrained. We give
         examples of use types not covered by the <hi rend="italic">Guidelines</hi>, and propose some
         extensions.</p>
-    <div>
+    <div xml:id="forms.inheritance">
         <head>A note on inheritance</head>
         <p>We assume that in order to determine the complete properties of an element inside the
             entry tree, the principle of default inheritance applies, e.g. grammatical properties of
@@ -22,7 +22,7 @@
                 target="http://www.lrec-conf.org/proceedings/lrec2000/html/summary/335.htm"
                     ><hi>2000</hi></ref>).</p>
     </div>
-    <div>
+    <div xml:id="forms.lemmas">
         <head>Lemmas</head>
         <p>The form element should always be qualified by its <att>type</att>. The lemma (i.e.
             headword) form should be encoded as <code rend="language-xpath"
@@ -31,7 +31,7 @@
             opposed to the grammatical properties of the entry), this is described by <code
                 rend="language-xpath">entry/form[@type="lemma"]/gramGrp</code>.</p>
     </div>
-    <div>
+    <div xml:id="forms.inflected">
         <head>Inflected forms</head>
         <p>Dictionaries often include additional forms next to the lemma. In English, these are used
             to specify irregular forms, such as “corpus / corpora” or “take / took”, whereas in
@@ -54,7 +54,7 @@
                 corresp="../examples/examples.xml" xpointer="en000008"/>
         </egXML>
     </div>
-    <div>
+    <div xml:id="forms.paradigms">
         <head>Paradigms</head>
         <p>When several inflected forms can be present next to the lemma, these can be embedded into
                 <code rend="langauge-xpath">entry/form[@type="paradigm"]</code>. The decision on
@@ -70,14 +70,14 @@
                 corresp="../examples/examples.xml" xpointer="perder"/>
         </egXML>
     </div>
-    <div>
+    <div xml:id="forms.variants">
         <head>Variants</head>
         <p>The representation of variation within a form is highly dependant upon the specifics of
             the features of the variation and the way in which they vary. However, as a general
             principle, variation may be encoded as <code rend="language-xpath"
                 >form[@type="variant"]</code> and embedded within the parent element for which a
             subordinate feature exhibits variation.</p>
-        <div>
+        <div xml:id="forms.variants.orthographic">
             <head>Orthographic variation</head>
             <p>Several kinds of orthographic variation may be distinguished. Below, we present some
                 of the options with the corresponding examples.</p>
@@ -94,7 +94,7 @@
                     corresp="../examples/examples.xml" xpointer="Osama"/>
             </egXML>
         </div>
-        <div>
+        <div xml:id="forms.variants.phonetic">
             <head>Phonetic variation</head>
             <p>In this example, the entry contains the single orthographic form as a direct child of
                 the lemma and phonetic transcriptions of the two roughly equally used variant
@@ -117,7 +117,7 @@
                 </body>
             </floatingText>
         </div>
-        <div>
+        <div xml:id="forms.variants.dialectal">
             <head>Regional or dialectal variation</head>
             <p> In the following example from Mixtepec-Mixtec, there is variation in the form of the
                 word for the city of Oaxaca between speakers from the village of Yucanany and the
@@ -134,7 +134,7 @@
             </egXML>
         </div>
     </div>
-    <div>
+    <div xml:id="forms.condensed">
         <head>Condensed forms</head>
         <p>In some lexicographic traditions, it is common to encounter dictionary entries that
             conflate two or more distinct lemmas into a single entry headword. A frequent example of
@@ -191,7 +191,7 @@
             </body>
         </floatingText>
     </div>
-    <div>
+    <div xml:id="forms.multiword">
         <head>Multiword expressions</head>
         <p>The Dictionary Chapter of the TEI Guidelines is very sparse when it comes to
             recommendations for encoding polylexical units. The only mention of the adjective
@@ -215,7 +215,7 @@
                 target="#Tasovac2020">Tasovac 2020</ref>).</p>
         <p>TODO: explain different types of mwe's from a dict. model perspective referring to <ref
                 target="#Tasovac2020">Tasovac 2020</ref>)</p>
-        <div>
+        <div xml:id="forms.multiword.collocations">
             <head>Collocations</head>
             <p>TODO: explain "lexicographically transparent"</p>
             <figure>
@@ -226,7 +226,7 @@
                     corresp="../examples/examples.xml" xpointer="DLPC.descalçar"/>
             </egXML>
         </div>
-        <div>
+        <div xml:id="forms.multiword.idiomatic">
             <head>Idiomatic expressions</head>
             <p>TODO text ("lexicographically non-transparent")</p>
             <figure>

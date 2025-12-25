@@ -4,7 +4,7 @@
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
     xml:id="patterns">
     <head>Patterns</head>
-    <div>
+    <div xml:id="patterns.inheritanc-of-xml-lang">
         <head>Inheritance of <att>xml:lang</att></head>
         <p>Some elements in TEI Lex-0, like <gi>entry</gi>, for instance, have a required attribute
                 <att>xml:lang</att>; others like <gi>form</gi> or <gi>quote</gi> do not. In general,

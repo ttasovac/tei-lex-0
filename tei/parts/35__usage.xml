@@ -11,7 +11,7 @@
         be attached at various points in the entry hierarchy in order to signal restrictions in
         terms of geographic regions, domains of specialized language or stylistic properties for the
         particular lexical item that it is attached to.</p>
-    <div>
+    <div xml:id="usage.label-like-vs-narrative">
         <head>Label-like vs. narrative usage descriptions</head>
         <p>Usage information ca be provided in dictionaries both in the form of label-like
             descriptors (often abbreviated) and as fuller narrative expressions.</p>
@@ -32,7 +32,7 @@
                 corresp="../examples/examples.xml" xpointer="element(MZ.RGJS.сејче/4/1)"/>
         </egXML>
     </div>
-    <div>
+    <div xml:id="usage.typology">
         <head>Types of usage</head>
         <p>In TEI Lex-0, <gi>usg</gi> is a typed element and <att>type</att> is a mandatory
             attribute. The default value is: <code>&lt;usg
@@ -244,7 +244,7 @@
                 of TEI Lex-0.</item>
         </list>
     </div>
-    <div xml:id="RestristingUsg">
+    <div xml:id="usage.restricting-scope">
         <head>Restricting the scope of <gi>usg</gi>
         </head>
         <list type="ordered">
@@ -288,7 +288,7 @@
                 corpus frequencies), a separate element should be introduced. TODO</item>
         </list>
     </div>
-    <div xml:id="HierarchicalUsageLabels">
+    <div xml:id="usage.hierarchichal">
         <head>Hierarchical usage labels</head>
         <p>Usage labels tend to be described in dictionaries as flat lists: the list of all labels
             usually appears in the front matter, and often as part of lists of abbreviations, which

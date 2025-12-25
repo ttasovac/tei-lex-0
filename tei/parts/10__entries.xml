@@ -3,8 +3,6 @@
 <?xml-stylesheet type="text/css" href="../css/tei.lex0.odd.css"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="entries">
    <head>Entries</head>
-   <div>
-      <head>General remarks</head>
       <p>An <gi>entry</gi> is a basic reference unit in a dictionary: it groups together all the
          information related to a particular lemma. For instance:</p>
       <list type="examples">
@@ -19,8 +17,7 @@
             </egXML>
          </item>
       </list>
-   </div>
-   <div>
+   <div xml:id="entries.mandatory-attributes">
       <head>Mandatory attributes</head>
       <p>The TEI Lex-0 schema prescribes two mandatory attributes on <gi>entry</gi>:</p>
       <list>
@@ -70,10 +67,8 @@
          </body>
       </floatingText>
    </div>
-   <div>
+   <div xml:id="entries.grammatical-properties">
       <head>Grammatical properties</head>
-      <div>
-         <head>General remarks</head>
          <p>Grammatical properties of lexical entries should be specified in <code
                rend="language-xpath">entry/gramGrp/gram</code>. This <gi>gram</gi> element will
             typically specify the part-of-speech of the entry:</p>
@@ -100,8 +95,7 @@
                discussion under <ref target="#nested-entries-vs-multiple-senses">Nested entries vs.
                   multiple-senses</ref>. </item>
          </list>
-      </div>
-      <div xml:id="typology-of-gram">
+      <div xml:id="entries.grammatical-properties.typology-of-gram">
          <head>Typology of <gi>gram</gi></head>
          <p>The <hi rend="italic">TEI Guidelines</hi> define: <list>
                <item>seven <hi rend="italic">specific</hi> elements which can be used to mark up
@@ -230,7 +224,7 @@
             let us know by <ref target="https://github.com/DARIAH-ERIC/lexicalresources/issues/new"
                >filing a ticket on GitHub</ref>. </p>
       </div>
-      <div xml:id="collocates">
+      <div xml:id="entries.grammatical-properties.collocates">
          <head>Collocates</head>
          <p>The <hi rend="italic">TEI Guidelines</hi> define a specific element <gi>colloc</gi>
             (collocate) for marking up "any sequence of words that co-occur with the headword with
@@ -273,7 +267,7 @@
          </p>
       </div>
    </div>
-   <div>
+   <div xml:id="entries.deprecated-elements">
       <head>Deprecated entry-like elements</head>
       <p>The current TEI Guidelines define five different container elements that may serve as
          grouping devices for entry-level lexical information:</p>
@@ -311,7 +305,7 @@
             homographic entries: <gi>superEntry</gi> containing multiple <gi>entry</gi> elements; or
                <gi>entry</gi> containing multiple <gi>hom</gi> elements. </item>
       </list>
-      <div>
+      <div xml:id="entries.deprecated-elements.hom">
          <head><gi>hom</gi></head>
          <p>Making a clear difference between a situation where an entry has to be split into two or
             more homonyms and one where these differences correspond to a semantic alternation is
@@ -364,7 +358,7 @@
          </list>
          
       </div>
-      <div>
+      <div xml:id="entries.deprecated-elements.superEntry">
          <head><gi>superEntry</gi></head>
          <p>By making <gi>entry</gi> recursive, TEI Lex-0 has eliminated the need for grouping
             entries with <gi>superEntry</gi>.</p>
