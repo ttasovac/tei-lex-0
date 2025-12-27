@@ -144,9 +144,17 @@
             <p:pipe step="stylesheet-odd2lite" port="result"/>
         </p:with-input>
     </p:xslt>
+    <p:xslt name="fix-odd2lite-used-by-classes">
+        <p:with-input port="source">
+            <p:pipe step="odd2lite" port="result"/>
+        </p:with-input>
+        <p:with-input port="stylesheet">
+            <p:document href="../stylesheets/fix-odd2lite-used-by-classes.xsl"/>
+        </p:with-input>
+    </p:xslt>
     <p:choose>
         <p:with-input>
-            <p:pipe step="odd2lite" port="result"/>
+            <p:pipe step="fix-odd2lite-used-by-classes" port="result"/>
         </p:with-input>
         <p:when test="$debug = 'true'">
             <p:identity name="pass-odd2lite"/>
@@ -167,7 +175,7 @@
     </p:choose>
     <p:xslt name="fix-spec">
         <p:with-input port="source">
-            <p:pipe step="odd2lite" port="result"/>
+            <p:pipe step="fix-odd2lite-used-by-classes" port="result"/>
         </p:with-input>
         <p:with-input port="stylesheet">
             <p:document href="../stylesheets/fix-spec.xsl"/>
