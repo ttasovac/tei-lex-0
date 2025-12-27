@@ -3,8 +3,9 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:math="http://www.w3.org/2005/xpath-functions/math"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:lex0="urn:tei-lex0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="xs math"
+    exclude-result-prefixes="xs math lex0"
     version="3.0">
     
     <xsl:param name="cssSecondaryFile" select="'css/tei.lex0.web.css'"/>
@@ -25,8 +26,11 @@
     <xsl:param name="forceWrap">false</xsl:param>
     <xsl:param name="wrapLength">75</xsl:param>
     <xsl:param name="attLength">80</xsl:param>
-    <xsl:param name="splitLevel">2</xsl:param>
-    <xsl:param name="outputDir" select="'../build/html'"></xsl:param>-->
+    <xsl:param name="splitLevel">2</xsl:param>-->
+    <!-- Only apply splitLevel inside this div; other divs use splitLevelNonSpec. -->
+    <xsl:param name="splitOnlyID" select="'specification'"/>
+    <xsl:param name="splitLevelNonSpec" select="'0'"/>
+    <!--<xsl:param name="outputDir" select="'../build/html'"></xsl:param>-->
     
     <xsl:import href="https://www.tei-c.org/release/xml/tei/stylesheet/html/html.xsl"/>
     
@@ -39,6 +43,7 @@
     <xsl:import href="includes/toc.xsl"/>
     <xsl:import href="includes/examples.xsl"/>
     <xsl:import href="includes/references.xsl"/>
+    <xsl:import href="includes/lex0-split.xsl"/>
     <!--the following include uses data-src, not src for images
     reenable after including styling-->
      <xsl:import href="includes/graphic.xsl"/> 
@@ -65,5 +70,6 @@
         <script type="text/javascript" src="js/algo.js" xmlns="http://www.w3.org/1999/xhtml"/>
                 
     </xsl:template>
+
    
 </xsl:stylesheet>
