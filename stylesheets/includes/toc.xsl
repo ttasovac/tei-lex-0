@@ -9,13 +9,13 @@
         <xsl:param name="tocLevel" as="xs:integer"></xsl:param>
         <xsl:choose>
             <xsl:when test="$tocLevel eq 0 ">
-                <xsl:value-of select="'pure-u-2-24'"/>
+                <!--<xsl:value-of select="'pure-u-2-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 1 ">
-                <xsl:value-of select="'pure-u-2-24'"/>
+              <!--  <xsl:value-of select="'pure-u-2-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 2 ">
-                <xsl:value-of select="''"/>
+              <!--  <xsl:value-of select="''"/>-->
             </xsl:when>
         </xsl:choose>
     </xsl:function>
@@ -24,13 +24,13 @@
         <xsl:param name="tocLevel" as="xs:integer"></xsl:param>
         <xsl:choose>
             <xsl:when test="$tocLevel eq 0 ">
-                <xsl:value-of select="'pure-u-1-24'"/>
+                <!--<xsl:value-of select="'pure-u-1-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 1 ">
-                <xsl:value-of select="'pure-u-3-24'"/>
+                <!--<xsl:value-of select="'pure-u-3-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 2 ">
-                <xsl:value-of select="'pure-u-6-24'"/>
+               <!-- <xsl:value-of select="'pure-u-6-24'"/>-->
             </xsl:when>
         </xsl:choose>
     </xsl:function>
@@ -40,13 +40,13 @@
         <xsl:param name="tocLevel" as="xs:integer"></xsl:param>
         <xsl:choose>
             <xsl:when test="$tocLevel eq 0 ">
-                <xsl:value-of select="'pure-u-3-24'"/>
+                <!--<xsl:value-of select="'pure-u-3-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 1 ">
-                <xsl:value-of select="'pure-u-4-24'"/>
+                <!--<xsl:value-of select="'pure-u-4-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 2 ">
-                <xsl:value-of select="'pure-u-5-24'"/>
+                <!--<xsl:value-of select="'pure-u-5-24'"/>-->
             </xsl:when>
         </xsl:choose>
     </xsl:function>
@@ -55,16 +55,30 @@
         <xsl:param name="tocLevel" as="xs:integer"></xsl:param>
         <xsl:choose>
             <xsl:when test="$tocLevel eq 0 ">
-                <xsl:value-of select="'pure-u-18-24'"/>
+                <!--<xsl:value-of select="'pure-u-18-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 1 ">
-                <xsl:value-of select="'pure-u-15-24'"/>
+              <!--  <xsl:value-of select="'pure-u-15-24'"/>-->
             </xsl:when>
             <xsl:when test="$tocLevel eq 2 ">
-                <xsl:value-of select="'pure-u-13-24'"/>
+            <!--    <xsl:value-of select="'pure-u-13-24'"/>-->
             </xsl:when>
         </xsl:choose>
     </xsl:function>
+
+   <!--this removes the front matter from toc -\- i can remove this later
+   if we decide to give a heading to the home pages stuff. but at the moment
+   it doesn't make sense to me to have a heading in the toc called Home or Index
+   since the TEI Lex-0 in the upper left corner has that function already.-->
+    <xsl:template name="mainTOC">
+        <xsl:variable name="root" select="ancestor-or-self::tei:TEI[1]"/>
+        <xsl:for-each select="$root/tei:text/tei:body | $root/tei:text/tei:back">
+            <xsl:call-template name="partTOC">
+                <xsl:with-param name="part" select="local-name()"/>
+                <xsl:with-param name="force"/>
+            </xsl:call-template>
+        </xsl:for-each>
+    </xsl:template>
     
     <xsl:template name="partTOC">
         <xsl:param name="part"/>
@@ -81,7 +95,8 @@
     
     <xsl:template name="continuedToc">
         <xsl:if test="div">
-            <div class="continuedtoc pure-u-24-24" xmlns="http://www.w3.org/1999/xhtml">
+            <!--pure-u-24-24-->
+            <div class="continuedtoc" xmlns="http://www.w3.org/1999/xhtml">
                 <xsl:apply-templates mode="maketoc" select="div"/>
             </div>
         </xsl:if>
@@ -140,7 +155,8 @@
                 <xsl:choose>
                     <xsl:when test="not(ancestor::div) and child::div">
                         <xsl:attribute name="class">
-                            <xsl:text>tocTree pure-g</xsl:text>
+                            <!--pure-g-->
+                            <xsl:text>tocTree</xsl:text>
                         </xsl:attribute>
                         <xsl:variable name="tocLevel">
                             <xsl:value-of select="number(count(ancestor::tei:div))"/>
@@ -153,7 +169,8 @@
                     </xsl:when>
                     <xsl:when test="child::div">
                         <xsl:attribute name="class">
-                            <xsl:text>tocTree pure-g</xsl:text>
+                            <!--pure-g-->
+                            <xsl:text>tocTree</xsl:text>
                         </xsl:attribute>
                         <xsl:variable name="tocLevel">
                             <xsl:value-of select="number(count(ancestor::tei:div))"/>
@@ -163,7 +180,8 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:attribute name="class">
-                            <xsl:text>toc pure-g</xsl:text>
+                            <!--pure-g-->
+                            <xsl:text>toc</xsl:text>
                         </xsl:attribute>
                         <xsl:variable name="tocLevel">
                             <xsl:value-of select="number(count(ancestor::tei:div))"/>
