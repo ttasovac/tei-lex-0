@@ -18,18 +18,19 @@ textarea,
   font-size: 18px;
 }
 
-.custom-menu,
-.toc.pure-g [class*="pure-u"],
-.tocTree.pure-g [class*="pure-u"] {
+.custom-menu {
   font-size: 17px;
 }
 
 .pure-menu-heading {
-  position: fixed;
+  position: sticky;
+  top: 0;
   display: block;
   width: 325px;
+  height: 50px;
   z-index: 999;
   box-sizing: border-box;
+  background: #1a252f;
 }
 
 .floatingText_body {
@@ -52,7 +53,6 @@ span.att {
   color: #f5844c;
 }
 
-/*.tei_toc {padding-top: 50px;}*/
 .tei_toc h2 {
   display: none;
 }
@@ -64,9 +64,20 @@ span.att {
 }
 
 .tei_toc_search {
-  padding-top: 70px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+/* Keep search visible just below the heading while the menu scrolls. */
+#menu .tei_toc_search {
+  position: sticky;
+  top: 50px;
+  z-index: 998;
+  background: #1a252f;
+}
+
+#menu a {
+  padding-left: 5px;
+} 
 
 .maintitle {
   font-family: Helvetica, "Helvetica Neue", Calibri;
@@ -77,6 +88,16 @@ span.att {
   width: 325px !important;
   background: #1a252f !important;
   overflow: visible !important;
+}
+/* Ensure long TOC sections scroll within the menu. */
+#menu.custom-menu {
+  overflow: visible !important;
+}
+/* Scroll the TOC itself so the menu can stay overflow-visible for dropdowns. */
+#menu .toc {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (min-width: 48em) {
@@ -97,7 +118,7 @@ span.att {
 }
 
 .pure-menu {
-  padding-bottom: 50vh;
+  padding-bottom: 0;
 }
 
 .pure-menu-item {
@@ -107,45 +128,162 @@ span.att {
 }
 
 .pure-menu-item a,
-pure-menu-item span,
+.pure-menu-item span,
 a.toc {
   color: #999;
   text-decoration: none;
   white-space: wrap;
   display: inline;
 }
-´ .pure-g > div {
+.pure-g > div {
   box-sizing: border-box;
 }
 
 div.tocTree,
-div.toc {
-  margin-top: 15px;
+div.toc_body div.toc {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .toc-heading a.toc {
   /*resets the menu item padding*/
   padding: 0 !important;
-  padding-right: 13px !important;
-  display: inline-block;
+  padding-right: 12px !important;
 }
 
 .toc-heading:hover a.toc {
   color: #1f8dd6 !important;
 }
 
+.tocTree > div:first-child,
+div.toc_body div.toc > div:first-child {
+  order: 0;
+  flex: 0 0 1.5em;
+}
+
+/* Controls for first-level TOC entries */
+
+/* ignore first empty div
+TODO: remove in XSL */
+#menu .toc_body > .tocTree > div:first-child, 
+#menu .toc_body > .toc > div:first-child {
+  flex-basis: 0;
+}
+
+#menu .toc_body > .tocTree > .toc-heading-number,
+#menu .toc_body > .toc > .toc-heading-number  {
+  flex-basis: 2.5em;
+}
+
+#menu .toc_body > .tocTree > .toc-heading,
+#menu .toc_body > .toc > .toc-heading  {
+  max-width: calc(100% - 3.5em);
+}
+
+/* Controls for second-level TOC entries */
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree >  div:first-child, 
+#menu .toc_body > .tocTree > .continuedtoc > .toc >  div:first-child  {
+  flex-basis: 0em;
+}
+
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree > .toc-heading-number,
+#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-heading-number  {
+  flex-basis: 4.8em;
+}
+
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree > .toc-heading,
+#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-heading  {
+  flex-basis: 12.2em;
+}
+
+#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-showhide {
+  flex-basis: 1.5em;
+}
+
+/* Controls for third-level TOC entries */
+
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > div:first-child {
+  flex-basis: 0;
+}
+
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading-number {
+  flex-basis: 7.9em;
+}
+
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading {
+  flex-basis: 9em;
+}
+
+#menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-showhide {
+  flex-basis: 0;
+  padding-right: 0;
+}
+
+/* special provisions for TOC entries starting with the 10th  */
+
+/* second level */
+
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .toc > .toc-heading-number,
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .toc-heading-number {
+  flex-basis: 5.3em;
+}
+
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .toc > .toc-heading,
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .toc-heading {
+  flex-basis: 11em;
+}
+
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .toc > .toc-showhide,
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .toc-showhide {
+  flex-basis: 1.5em;
+}
+
+/* third level */
+#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading-number {
+  flex-basis: 8.8em;
+}
+
 .toc-heading-number {
-  color: #1f8dd6;
+  order: 1;
   text-align: right;
+  color: #1f8dd6;
+  line-height: 1.4;
+}
+
+.toc-heading {
+  order: 2;
+  flex: 1 1 auto;
+  text-align: left;
+  min-width: 0;
+  line-height: 1.4;
 }
 
 .toc-showhide {
-  /*right: 0px;*/
+  order: 3;
+  flex: 0 0 1.5em;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: flex-start;
+  height: 1.4em;
+  padding-right: 10px;
 }
 
+.tocTree > .continuedtoc,
+div.toc_body div.toc > .continuedtoc {
+  order: 4;
+  flex: 0 0 100%;
+}
+
+/* keep span spacing between number and heading */
 .toc-heading-number span {
   padding-right: 10px;
 }
+
 
 /*other stuff*/
 
@@ -165,9 +303,8 @@ div.toc {
   width: 14px;
   height: 14px;
   /* left: 20px;*/
-  top: 11px;
   background: #1f8dd6;
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: rotate(0deg);
   border-radius: 50%;
   cursor: pointer;
   transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
@@ -196,7 +333,7 @@ div.toc {
 }
 
 .plusminus.clicked {
-  transform: translate(-50%, -50%) rotate(360deg);
+  transform: rotate(360deg);
   background: #ed6f59;
 }
 
@@ -369,9 +506,6 @@ td.odd_label {
   margin-bottom: 1em;
 }
 
-.elogo .logos img {
-}
-
 /*terms in lists*/
 
 span.term {
@@ -406,6 +540,7 @@ tr.label {
 }
 
 .pure-menu-list {
+  padding-top: 12px;
   background-image: url("../images/dkbl.png");
 }
 
@@ -472,7 +607,6 @@ span.label img {
   max-height: 0;
   /*padding: 0 1em;*/
   color: #2c3e50;
-  background: white;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
   background: #f2faff;
@@ -541,19 +675,24 @@ span.label {
   font-weight: bold;
 }
 
+ /* search input width here */
 .algo {
   opacity: 1;
   margin-left: 1em;
   z-index: 9999;
-  width: 290px;
-}
-
-.ds-dropdown-menu:before {
+  width: 16em;
 }
 
 /* Main dropdown wrapper */
 .algolia-autocomplete .ds-dropdown-menu {
   width: 500px;
+  position: absolute;
+  left: 0;
+  z-index: 5002;
+}
+.algolia-autocomplete {
+  position: relative;
+  z-index: 5001;
 }
 
 /* Main category (eg. Getting Started) */

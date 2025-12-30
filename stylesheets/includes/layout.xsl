@@ -82,7 +82,7 @@
 
             <!-- Menu toggle: CSS controls left/overlay behavior for #menu/#menuLink. -->
             <a href="#menu" id="menuLink" class="menu-link" xmlns="http://www.w3.org/1999/xhtml">
-                <!-- Hamburger icon -->
+                <!-- Hamburger icon; needed to retrieve the menu on small screens -->
                 <span/>
             </a>
             <!--
@@ -96,7 +96,7 @@
                 <div class="pure-menu">
                     <div class="pure-menu-heading">
                         <a
-                            style="float:right; text-transform:capitalize; margin-right: 0.75em; line-height:30px; vertical-align:middle; font-size:85%; padding: 0"
+                            style="float:right; text-transform:capitalize; line-height:30px; vertical-align:middle; font-size:85%; padding: 0"
                             href="#revisionHistory">Version <xsl:value-of select="$version"/></a>
                         <a style="line-height:30px; vertical-align:middle" href="index.html">TEI Lex-0</a>
 
