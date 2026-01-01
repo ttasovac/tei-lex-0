@@ -13,8 +13,8 @@ select,
 textarea,
 .pure-g [class*="pure-u"] {
   /* Set your content font stack here: */
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
-    "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue",
+    "Lucida Grande", sans-serif;
   font-size: 18px;
 }
 
@@ -67,6 +67,7 @@ span.att {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 /* Keep search visible just below the heading while the menu scrolls. */
 #menu .tei_toc_search {
   position: sticky;
@@ -77,7 +78,7 @@ span.att {
 
 #menu a {
   padding-left: 5px;
-} 
+}
 
 .maintitle {
   font-family: Helvetica, "Helvetica Neue", Calibri;
@@ -89,10 +90,12 @@ span.att {
   background: #1a252f !important;
   overflow: visible !important;
 }
+
 /* Ensure long TOC sections scroll within the menu. */
 #menu.custom-menu {
   overflow: visible !important;
 }
+
 /* Scroll the TOC itself so the menu can stay overflow-visible for dropdowns. */
 #menu .toc {
   max-height: calc(100vh - 200px);
@@ -111,6 +114,7 @@ span.att {
     padding-left: 325px !important;
   }
 }
+
 .custom-menu.active,
 .custom-layout.active,
 .custom-layout.active .menu-link {
@@ -135,6 +139,7 @@ a.toc {
   white-space: wrap;
   display: inline;
 }
+
 .pure-g > div {
   box-sizing: border-box;
 }
@@ -166,36 +171,26 @@ div.toc_body div.toc > div:first-child {
 
 /* Controls for first-level TOC entries */
 
-/* ignore first empty div */
-/* #menu .toc_body > .tocTree > div:first-child, 
-#menu .toc_body > .toc > div:first-child {
-  flex-basis: 0;
-} */
-
 #menu .toc_body > .tocTree > .toc-heading-number,
-#menu .toc_body > .toc > .toc-heading-number  {
-  flex-basis: 2.5em;
+#menu .toc_body > .toc > .toc-heading-number {
+  flex-basis: 3em;
 }
 
 #menu .toc_body > .tocTree > .toc-heading,
-#menu .toc_body > .toc > .toc-heading  {
+#menu .toc_body > .toc > .toc-heading {
   max-width: calc(100% - 3.5em);
 }
 
 /* Controls for second-level TOC entries */
-/* #menu .toc_body > .tocTree > .continuedtoc > .tocTree >  div:first-child, 
-#menu .toc_body > .tocTree > .continuedtoc > .toc >  div:first-child  {
-  flex-basis: 0em;
-} */
 
 #menu .toc_body > .tocTree > .continuedtoc > .tocTree > .toc-heading-number,
-#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-heading-number  {
-  flex-basis: 4.8em;
+#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-heading-number {
+  flex-basis: 5.25em;
 }
 
 #menu .toc_body > .tocTree > .continuedtoc > .tocTree > .toc-heading,
-#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-heading  {
-  flex-basis: 12.2em;
+#menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-heading {
+  flex-basis: 11em;
 }
 
 #menu .toc_body > .tocTree > .continuedtoc > .toc > .toc-showhide {
@@ -204,16 +199,12 @@ div.toc_body div.toc > div:first-child {
 
 /* Controls for third-level TOC entries */
 
-/* #menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > div:first-child {
-  flex-basis: 0;
-} */
-
 #menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading-number {
-  flex-basis: 7.9em;
+  flex-basis: 8.4em;
 }
 
 #menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading {
-  flex-basis: 9em;
+  flex-basis: 9.1em;
 }
 
 #menu .toc_body > .tocTree > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-showhide {
@@ -225,24 +216,24 @@ div.toc_body div.toc > div:first-child {
 
 /* second level */
 
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .toc > .toc-heading-number,
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .toc-heading-number {
-  flex-basis: 5.3em;
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .toc > .toc-heading-number,
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .tocTree > .toc-heading-number {
+  flex-basis: 5.8em;
 }
 
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .toc > .toc-heading,
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .toc-heading {
-  flex-basis: 11em;
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .toc > .toc-heading,
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .tocTree > .toc-heading {
+  flex-basis: 10.75em;
 }
 
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .toc > .toc-showhide,
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .toc-showhide {
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .toc > .toc-showhide,
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .tocTree > .toc-showhide {
   flex-basis: 1.5em;
 }
 
 /* third level */
-#menu .toc_body > div:nth-child(n+10) > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading-number {
-  flex-basis: 8.8em;
+#menu .toc_body > div:nth-child(n + 10) > .continuedtoc > .tocTree > .continuedtoc > .toc > .toc-heading-number {
+  flex-basis: 9.4em;
 }
 
 .toc-heading-number {
@@ -269,7 +260,7 @@ div.toc_body div.toc > div:first-child {
   justify-content: flex-end;
   align-self: flex-start;
   height: 1.4em;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 .tocTree > .continuedtoc,
@@ -283,14 +274,11 @@ div.toc_body div.toc > .continuedtoc {
   padding-right: 10px;
 }
 
-
 /*other stuff*/
 
 .tocHide,
 .continuedtoc {
   display: none;
-  /* margin-left: 41px;*/
-  /*margin-top:10px;*/
 }
 
 .tocTree.active > .continuedtoc {
@@ -357,8 +345,7 @@ pre[class*="language-"] {
 .xmlAttVal,
 .teiCode,
 span.val {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 /* We want our XML code text to be bold. */
@@ -568,6 +555,7 @@ input {
   color: #fff;
   overflow: hidden;
 }
+
 .tab-label {
   display: -webkit-box;
   display: flex;
@@ -581,9 +569,11 @@ input {
   font-size: 0.9em;
   /* Icon */
 }
+
 .tab-label:hover {
   background: #1a252f;
 }
+
 .tab-label::after {
   content: "\276F";
   width: 1em;
@@ -635,6 +625,7 @@ span.label img {
   background: #2c3e50;
   cursor: pointer;
 }
+
 .tab-close:hover {
   background: #1a252f;
 }
@@ -646,9 +637,11 @@ span.label img {
 input:checked + .tab-label {
   background: #1f8dd6;
 }
+
 input:checked + .tab-label::after {
   transform: rotate(90deg);
 }
+
 input:checked ~ .tab-content {
   max-height: 1000vh;
   /*padding: 0 0.5em 0 0;*/
@@ -674,7 +667,7 @@ span.label {
   font-weight: bold;
 }
 
- /* search input width here */
+/* search input width here */
 .algo {
   opacity: 1;
   margin-left: 1em;
@@ -689,6 +682,7 @@ span.label {
   left: 0;
   z-index: 5002;
 }
+
 .algolia-autocomplete {
   position: relative;
   z-index: 5001;
@@ -700,9 +694,7 @@ span.label {
   font-size: 0;
 }
 
-.algolia-autocomplete
-  .algolia-docsearch-suggestion--category-header
-  .algolia-docsearch-suggestion--highlight {
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight {
   color: darkgray;
   border-bottom: 1px solid gainsboro;
   /*text-decoration: none;*/
@@ -728,8 +720,7 @@ span.label {
   color: gray;
 }
 
-.algolia-autocomplete
-  .algolia-docsearch-suggestion--subcategory-column::before {
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column::before {
   background: gainsboro;
 }
 
@@ -737,10 +728,7 @@ span.label {
   background: none;
 }
 
-.algolia-autocomplete
-  .ds-dropdown-menu
-  .ds-suggestion.ds-cursor
-  .algolia-docsearch-suggestion.suggestion-layout-simple,
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion.suggestion-layout-simple,
 .algolia-autocomplete
   .ds-dropdown-menu
   .ds-suggestion.ds-cursor
@@ -756,7 +744,8 @@ span.label {
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--title:hover {
-  color: black; /*darkmode*/
+  color: black;
+  /*darkmode*/
 }
 
 /* Description description (eg. Bootstrap currently works...) */
@@ -804,6 +793,7 @@ blockquote.quote {
   display: inline;
   padding-inline-start: 0px;
 }
+
 .classSpecAttDefs li.item {
   display: inline;
   padding-inline-start: 0px;
@@ -832,4 +822,102 @@ div.parent a.link_odd_dataSpec {
 
 div.parent ul {
   margin-block-start: 0em;
+}
+
+/* Navigation layout in grid-nav: Previous (left), Up (center), Next (right) */
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+}
+
+.content > * {
+  order: 3;
+}
+
+.content > .grid-nav:first-of-type {
+  order: 1;
+}
+
+.content > h2:first-child {
+  order: 2;
+}
+
+.grid-nav {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr max-content max-content;
+  align-items: center;
+  column-gap: 0.35em;
+  row-gap: 0;
+}
+
+.grid-nav span,
+.grid-nav a.navigation {
+  grid-row: 1;
+}
+
+/* Replace nav labels with arrows while keeping text for screen readers */
+.grid-nav .upLink,
+.grid-nav .previousLink,
+.grid-nav .nextLink {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.grid-nav .upLink,
+.grid-nav .upLink + a.navigation {
+  display: none;
+}
+
+.grid-nav .upLink::before,
+.grid-nav .previousLink::before,
+.grid-nav .nextLink::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-indent: 0;
+  color: #1f8dd6;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.grid-nav .upLink::before {
+  content: "↑";
+}
+
+.grid-nav .previousLink::before {
+  content: "←";
+}
+
+.grid-nav .nextLink::before {
+  content: "→";
+}
+
+.grid-nav .previousLink {
+  grid-column: 1;
+}
+
+.grid-nav .previousLink + a.navigation {
+  grid-column: 2;
+}
+
+.grid-nav .upLink {
+  grid-column: 4;
+}
+
+.grid-nav .upLink + a.navigation {
+  grid-column: 5;
+}
+
+.grid-nav .nextLink {
+  grid-column: 5;
+}
+
+.grid-nav .nextLink + a.navigation {
+  grid-column: 4;
 }
