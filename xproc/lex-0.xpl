@@ -141,7 +141,8 @@
                 'headInXref': 'false',
                 'outputMethod': 'xhtml',
                 'bottomNavigationPanel' :'true',
-                'topNavigationPanel' :'false'
+                'topNavigationPanel' :'true',
+                'alignNavigationPanel': 'grid-nav'
            
             }"/>
         <p:with-input port="source">
