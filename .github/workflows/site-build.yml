@@ -40,11 +40,11 @@ jobs:
           mkdir -p .cache/tools
           CALABASH_VERSION=3.0.35
           SAXON_VERSION=12.4
-          CALABASH_JAR=".cache/tools/xmlcalabash-${CALABASH_VERSION}.jar"
+          CALABASH_JAR=".cache/tools/xmlcalabash-app-${CALABASH_VERSION}.jar"
           SAXON_JAR=".cache/tools/saxon-he-${SAXON_VERSION}.jar"
           if [ ! -f "$CALABASH_JAR" ]; then
-            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar"
-            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar.sha256"
+            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar"
+            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar.sha256"
             echo "$(cat "$CALABASH_JAR.sha256")  $CALABASH_JAR" | sha256sum -c -
           fi
           if [ ! -f "$SAXON_JAR" ]; then
@@ -52,7 +52,7 @@ jobs:
             curl -L -o "$SAXON_JAR.sha256" "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar.sha256"
             echo "$(cat "$SAXON_JAR.sha256")  $SAXON_JAR" | sha256sum -c -
           fi
-          echo "XMLCALABASH_JAR=$CALABASH_JAR" >> "$GITHUB_ENV"
+          echo "XMLCALABASH_CMD=java -jar $CALABASH_JAR {PIPELINE}" >> "$GITHUB_ENV"
           echo "SAXON_JAR=$SAXON_JAR" >> "$GITHUB_ENV"
       - run: npm ci
       - run: npm run build
@@ -91,11 +91,11 @@ jobs:
           mkdir -p .cache/tools
           CALABASH_VERSION=3.0.35
           SAXON_VERSION=12.4
-          CALABASH_JAR=".cache/tools/xmlcalabash-${CALABASH_VERSION}.jar"
+          CALABASH_JAR=".cache/tools/xmlcalabash-app-${CALABASH_VERSION}.jar"
           SAXON_JAR=".cache/tools/saxon-he-${SAXON_VERSION}.jar"
           if [ ! -f "$CALABASH_JAR" ]; then
-            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar"
-            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar.sha256"
+            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar"
+            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar.sha256"
             echo "$(cat "$CALABASH_JAR.sha256")  $CALABASH_JAR" | sha256sum -c -
           fi
           if [ ! -f "$SAXON_JAR" ]; then
@@ -103,7 +103,7 @@ jobs:
             curl -L -o "$SAXON_JAR.sha256" "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar.sha256"
             echo "$(cat "$SAXON_JAR.sha256")  $SAXON_JAR" | sha256sum -c -
           fi
-          echo "XMLCALABASH_JAR=$CALABASH_JAR" >> "$GITHUB_ENV"
+          echo "XMLCALABASH_CMD=java -jar $CALABASH_JAR {PIPELINE}" >> "$GITHUB_ENV"
           echo "SAXON_JAR=$SAXON_JAR" >> "$GITHUB_ENV"
       - run: npm ci
       - run: npm run build
@@ -170,11 +170,11 @@ jobs:
           mkdir -p .cache/tools
           CALABASH_VERSION=3.0.35
           SAXON_VERSION=12.4
-          CALABASH_JAR=".cache/tools/xmlcalabash-${CALABASH_VERSION}.jar"
+          CALABASH_JAR=".cache/tools/xmlcalabash-app-${CALABASH_VERSION}.jar"
           SAXON_JAR=".cache/tools/saxon-he-${SAXON_VERSION}.jar"
           if [ ! -f "$CALABASH_JAR" ]; then
-            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar"
-            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar.sha256"
+            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar"
+            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar.sha256"
             echo "$(cat "$CALABASH_JAR.sha256")  $CALABASH_JAR" | sha256sum -c -
           fi
           if [ ! -f "$SAXON_JAR" ]; then
@@ -182,7 +182,7 @@ jobs:
             curl -L -o "$SAXON_JAR.sha256" "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar.sha256"
             echo "$(cat "$SAXON_JAR.sha256")  $SAXON_JAR" | sha256sum -c -
           fi
-          echo "XMLCALABASH_JAR=$CALABASH_JAR" >> "$GITHUB_ENV"
+          echo "XMLCALABASH_CMD=java -jar $CALABASH_JAR {PIPELINE}" >> "$GITHUB_ENV"
           echo "SAXON_JAR=$SAXON_JAR" >> "$GITHUB_ENV"
       - run: npm ci
       - run: npm run build
@@ -261,11 +261,11 @@ jobs:
           mkdir -p .cache/tools
           CALABASH_VERSION=3.0.35
           SAXON_VERSION=12.4
-          CALABASH_JAR=".cache/tools/xmlcalabash-${CALABASH_VERSION}.jar"
+          CALABASH_JAR=".cache/tools/xmlcalabash-app-${CALABASH_VERSION}.jar"
           SAXON_JAR=".cache/tools/saxon-he-${SAXON_VERSION}.jar"
           if [ ! -f "$CALABASH_JAR" ]; then
-            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar"
-            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash/${CALABASH_VERSION}/xmlcalabash-${CALABASH_VERSION}.jar.sha256"
+            curl -L -o "$CALABASH_JAR" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar"
+            curl -L -o "$CALABASH_JAR.sha256" "https://repo1.maven.org/maven2/com/xmlcalabash/xmlcalabash-app/${CALABASH_VERSION}/xmlcalabash-app-${CALABASH_VERSION}.jar.sha256"
             echo "$(cat "$CALABASH_JAR.sha256")  $CALABASH_JAR" | sha256sum -c -
           fi
           if [ ! -f "$SAXON_JAR" ]; then
@@ -273,7 +273,7 @@ jobs:
             curl -L -o "$SAXON_JAR.sha256" "https://repo1.maven.org/maven2/net/sf/saxon/Saxon-HE/${SAXON_VERSION}/Saxon-HE-${SAXON_VERSION}.jar.sha256"
             echo "$(cat "$SAXON_JAR.sha256")  $SAXON_JAR" | sha256sum -c -
           fi
-          echo "XMLCALABASH_JAR=$CALABASH_JAR" >> "$GITHUB_ENV"
+          echo "XMLCALABASH_CMD=java -jar $CALABASH_JAR {PIPELINE}" >> "$GITHUB_ENV"
           echo "SAXON_JAR=$SAXON_JAR" >> "$GITHUB_ENV"
       - run: npm ci
       - run: npm run build
