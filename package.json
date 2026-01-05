@@ -9,7 +9,8 @@
   "scripts": {
     "assets:images": "node scripts/copy-images.mjs",
     "assets:minify": "node scripts/minify-assets.mjs",
-    "build": "npm run assets:minify && npm run assets:images",
+    "assets:odd": "node scripts/run-xproc.mjs",
+    "build": "npm run assets:odd && npm run assets:minify && npm run assets:images",
     "assets:watch": "node scripts/watch-assets.mjs"
   },
   "repository": {
