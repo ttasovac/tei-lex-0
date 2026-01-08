@@ -155,7 +155,8 @@
                             <div class="footer-center">
                                 <a href="https://creativecommons.org/licenses/by/4.0/" class="footer-logo footer-logo-cc-by"
                                 aria-label="Licensed under CC-BY">
-                                    <img src="images/CC-BY-SA_icon_yellow.svg" alt="CC-BY"/>
+                                    <img src="images/by.png"
+                                    alt="CC-BY"/>
                                 </a>
                             </div>
 
