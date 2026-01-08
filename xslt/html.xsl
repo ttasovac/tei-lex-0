@@ -62,6 +62,10 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"/>
         <script type="text/javascript" src="js/algo.js"/>             
     </xsl:template>
+    
+    <xsl:template name="headHook">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </xsl:template>
 
    
 </xsl:stylesheet>
