@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication information</p>        
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>A <hi rend="italic">data type</hi> defines what counts as a valid value for an
+            attribute. For example, a data type might specify that an attribute value is plain text,
+            a single <hi rend="italic">token</hi> (no spaces), a <hi rend="italic">list</hi> of
+            tokens, a <hi rend="italic">number</hi>, a <hi rend="italic">reference</hi> (pointer) to
+            something else, or one choice from a controlled list (an <hi rend="italic"
+               >enumeration</hi>). Data types are one of the ways TEI Lex-0 turns <q>good advice</q>
+            into something a validator or editor can actually check.</p>
+         <p>Some data types will expect a single token, as in <code>&lt;sense xml:id="s1"/></code>
+            because the value of <code>@xml:id</code> must be a single, white-space token); while
+            others will accept a space-separated list of tokens, as in <code>&lt;cit type="example"
+               corresp="#s1 #s2"/></code>, because the data type of <code>@corresp</code>, which is
+            defined in the attribute class <ref target="TEI.att.global.linking.html"
+               >att.global.linking</ref>, expects one or <hi rend="italic">more references separated
+               by spaces</hi>, not commas or semicolons.</p>
+         <p>Because Lex-0 is based on TEI P5, many data types come from TEI’s general
+            infrastructure. Lex-0 may also narrow or recommend particular value patterns for
+            dictionary-specific interoperability.</p>
+         <p>You will usually encounter a data type indirectly: when you look up an element and its
+            attributes or via an attribute's membership in an attribute class. </p>
+      </body>
+  </text>
+</TEI>

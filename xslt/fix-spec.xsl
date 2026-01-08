@@ -28,37 +28,57 @@
     <xsl:template match="div[@xml:id = 'specification']/div[1]">
         <xsl:element name="div" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:attribute name="xml:id">TEI.elements</xsl:attribute>
+            <xsl:copy-of
+                select="document('../odd/includes/intros/intro-to-elements.xml')/tei:TEI/tei:text/tei:body/node()"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
+    
+    <xsl:template match="div[@xml:id = 'elements']/head"></xsl:template>
+    
     <xsl:template match="div[@xml:id = 'specification']/div[2]">
         <xsl:element name="div" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:attribute name="xml:id">TEI.model-classes</xsl:attribute>
+            <xsl:copy-of
+                select="document('../odd/includes/intros/intro-to-model-classes.xml')/tei:TEI/tei:text/tei:body/node()"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="div[@xml:id = 'model-classes']/head"></xsl:template>
 
     <xsl:template match="div[@xml:id = 'specification']/div[3]">
         <xsl:element name="div" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:attribute name="xml:id">TEI.attribute-classes</xsl:attribute>
+            <xsl:copy-of
+                select="document('../odd/includes/intros/intro-to-attribute-classes.xml')/tei:TEI/tei:text/tei:body/node()"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="div[@xml:id = 'attribute-classes']/head"></xsl:template>
 
     <xsl:template match="div[@xml:id = 'specification']/div[4]">
         <xsl:element name="div" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:attribute name="xml:id">TEI.macros</xsl:attribute>
+            <xsl:copy-of
+                select="document('../odd/includes/intros/intro-to-macros.xml')/tei:TEI/tei:text/tei:body/node()"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="div[@xml:id = 'macros']/head"></xsl:template>
 
     <xsl:template match="div[@xml:id = 'specification']/div[5]">
         <xsl:element name="div" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:attribute name="xml:id">TEI.datatypes</xsl:attribute>
+            <xsl:copy-of
+                select="document('../odd/includes/intros/intro-to-datatypes.xml')/tei:TEI/tei:text/tei:body/node()"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="div[@xml:id = 'datatypes']/head"></xsl:template>
 
     <xsl:template match="node() | @*">
         <xsl:copy>
