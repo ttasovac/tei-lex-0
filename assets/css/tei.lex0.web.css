@@ -98,7 +98,8 @@ span.att {
 
 /* Scroll the TOC itself so the menu can stay overflow-visible for dropdowns. */
 #menu .toc {
-  max-height: 100vh;
+  /* Limit TOC height to the viewport minus the sticky header/search so it can scroll. */
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
   overflow-x: hidden;
 }
