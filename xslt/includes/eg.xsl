@@ -3,6 +3,7 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    exclude-result-prefixes="tei"
     version="3.0">
 
     <xsl:template match="tei:eg">

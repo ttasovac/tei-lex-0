@@ -169,7 +169,8 @@ td.wovenodd-col2 > ol {
   padding-left: 1em;
 }
 
-td.wovenodd-col2:has(.code-toolbar) {
+td.wovenodd-col2:has(> .code-toolbar:first-child),
+td.wovenodd-col2:has(> .pre_eg:first-child) {
   padding-top: 0;
   padding-bottom: 0;
 }

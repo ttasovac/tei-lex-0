@@ -458,7 +458,7 @@ div.thumbnail {
 */
 
 td.odd_label {
-  width: 100px;
+  width: 123px;
 }
 
 /*logos*/
@@ -1118,4 +1118,8 @@ div.parent ul {
   background: #f2faff;
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-size: 0.95em;
+}
+
+.refdoc {
+  margin-bottom: 1em;
 }
