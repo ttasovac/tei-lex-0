@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <p>A <hi rend="italic">model class</hi> is a named group of elements that can be used in
+            the same structural positions. Model classes do not appear in your XML as tags; you
+            never write a model class in the document. Instead, they are part of the architecture
+            behind the scenes.</p>
+         <p>You will most often encounter model classes when you are trying to understand a content
+            model and you see something like <q>members of class X</q>. When that happens, you can
+            look up the model class, read which elements belong to it, and return to the original
+            element’s content model and interpret it as: <q>you may use one of these elements
+               here</q>.</p>
+         <p>In practical terms, however, most lexicographers and encoders will <hi rend="italic"
+               >not</hi> spend much time investigating or thinking about model classes. In
+            day-to-day work, it is much more important for you to focus on individual elements,
+            their attributes, and what other concrete elements are allowed within the given element.
+            For instance, you cannot have a <ref target="TEI.def.html">&lt;def&gt;</ref> within a
+               <ref target="TEI.sense.html">&lt;sense&gt;</ref>, but you can have a <ref
+               target="TEI.cit.html">&lt;cit&gt;</ref> within a <ref target="TEI.sense.html"
+               >&lt;sense&gt;</ref>, and within <ref target="TEI.cit.html">&lt;cit&gt;</ref>, you
+            can have a <ref target="TEI.def.html">&lt;def&gt;</ref>. Model classes make such rules
+            possible, but they will be of more interest to super nerds who are maintaining Lex-0 or
+            those who are interested in extending it or customizing it further.</p>
+      </body>
+   </text>
+</TEI>

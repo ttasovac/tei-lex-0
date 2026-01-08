@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication information</p>        
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>A <hi rend="italic">macro</hi> is a named pattern used inside the <hi rend="italic"
+               >Specification</hi> to express common structures concisely. Like model classes,
+            macros do not appear as tags in your XML. They are a documentation and schema-building
+            convenience: a macro stands for <q>this kind of content, as defined over here</q>.</p>
+         
+         <p>Macros are often used for common kinds of mixed or inline content, reusable blocks that
+            appear in several parts of an entry, and recurring technical patterns that would
+            otherwise clutter the element descriptions. For instance, Lex-0 defines <ref
+               target="TEI.macro.lexParaContent.html">macro.lexParaContent</ref> as a more
+            constrained subset of TEI P5' <ref
+               target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.paraContent.html"
+               >macro.paraContent</ref> to group elements that can be used as children of certain
+            lexicographic elements.</p>
+         <p>While they arguably make the <hi rend="italic">Specification</hi> easier to maintain,
+            macros will probably not play a major role in your day-to-day lexicographic and encoding
+            activities unless you're interested in how things work behind the scenes or if you,
+            perahps, want to further customize TEI Lex-0.</p>
+      </body>
+  </text>
+</TEI>

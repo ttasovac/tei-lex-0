@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication information</p>        
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>An <hi rend="italic">attribute</hi> is extra information attached to an element, written
+            inside the start tag, such as <att>xml:lang</att>, <att>xml:id</att>, or
+            <att>type</att>. An <hi rend="italic">attribute class</hi> is a reusable bundle of
+            attributes that many elements share.</p>
+         
+         <p>Elements carry the main structure, for instance: <ref target="TEI.form.html">&lt;form&gt;</ref>.
+            Attributes add details which qualify the given element, for instance: <code>&lt;form
+               type="lemma"/></code>. An attribute class is a shared standard set of such details
+            that TEI and Lex-0 apply consistently across many elements, for instance:
+            <ref target="TEI.att.typed.html">att.typed</ref></p>
+         <p>Attribute classes help TEI and Lex-0 ensure that common metadata (identifiers,
+            language, linking, typing) works the same way across the vocabulary, avoid repeating the
+            same attribute definitions on hundreds of elements, and support predictable
+            processing.</p>
+         <p>In day-to-day practice, lexicographers and encoders will most likely focus on which
+            individual attributes are allowed within each individual elements. But if for any reason
+            you want to understand how attributes function <hi rend="italic">across</hi> elements,
+            attribute classess will become your friends. </p>
+      </body>
+  </text>
+</TEI>
