@@ -27,7 +27,7 @@ Goal: keep `dev` and `main` strictly linear; only feature branches get rebased/f
 
 ## Release dev to main (fast-forward only)
 
-- **CLI (preferred):** `git checkout main && git fetch && git merge --ff-only origin/dev && git push` (advances `main` to `dev` with no merge commit).
+- **CLI (preferred):** `git checkout main && git fetch origin && git merge --ff-only origin/dev && git push origin main` (advances `main` to `dev` with no merge commit).
 - **GitHub UI/Desktop:** GitHub PRs don’t offer a true fast-forward merge; “rebase”/“squash” create new commits. If you want `main` to exactly match `dev` with no new commits, use the CLI fast-forward above.
 
 ## Protections and rules
