@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0" xmlns:eg="http://www.tei-c.org/ns/Examples">
-    
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs eg"
+version="3.0" xmlns:eg="http://www.tei-c.org/ns/Examples"
+xpath-default-namespace="http://www.tei-c.org/ns/Examples">
+
     <!-- remember to deselect xml:base fixup in XML Parser Preferences in oXygen-->
     <!--    otherwise, included fragments will probably include xml:base, which we don't want-->
-    
-    <xsl:output method="xml" encoding="UTF-8" indent="yes" /> 
     
     <xsl:template match="/">
         <xsl:text>&#xa;</xsl:text><xsl:text>&#xa;</xsl:text>
@@ -33,14 +34,16 @@ then transform using tei-stripper.xsl</xsl:comment>
         <xsl:copy></xsl:copy>
     </xsl:template>
     
-    
     <!-- template to copy the rest of the nodes -->
      <!-- removed processing instructions because stripped file
      shouldn't be validated against RelaxNG -->
-    <xsl:template match="comment() | text()">
+    <xsl:template match="comment()">
         <xsl:copy></xsl:copy>
     </xsl:template>
     
-   
-    
+    <!-- collapse runs of whitespace in text nodes (but keep a single space) -->
+    <xsl:template match="text()">
+        <xsl:value-of select="replace(., '\s+', ' ')"/>
+    </xsl:template>
+
 </xsl:stylesheet>

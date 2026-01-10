@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../build/rng/TEILex0.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../../build/rng/TEILex0.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../build/html/rng/lex0.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../build/html/rng/lex0.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="lex-0">
    <teiHeader>
       <fileDesc>
@@ -8,10 +8,10 @@
             <title>Examples of TEI Lex-0</title>
          </titleStmt>
          <editionStmt>
-            <edition></edition>
-            <author></author>
-            <editor></editor>
-            <principal></principal>
+            <edition/>
+            <author/>
+            <editor/>
+            <principal/>
          </editionStmt>
          <publicationStmt>
             <publisher>DARIAH WG Lexical Resources</publisher>
@@ -19,19 +19,20 @@
                <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence>
             </availability>
          </publicationStmt>
-         
+
       </fileDesc>
-     
+
       <profileDesc>
          <langUsage>
             <language ident="mix" role="objectLanguage"><name>Mixtepec Mixtec</name></language>
-            <language ident="mix-x-YCNY" role="objectLanguage"><name>Yucanany Mixtec</name></language>
+            <language ident="mix-x-YCNY" role="objectLanguage"><name>Yucanany
+               Mixtec</name></language>
          </langUsage>
       </profileDesc>
    </teiHeader>
    <text>
       <body>
-        <!--organize entries alphabetically-->
+         <!--organize entries alphabetically-->
          <entry type="mainEntry" xml:lang="cz" xml:id="en000008">
             <form type="lemma" xml:id="en000008.hw1">
                <orth>abeceda</orth>
@@ -610,7 +611,8 @@
                <form type="collocations">
                   <form type="collocation">
                      <orth>
-                        <ref type="form" scope="currentEntry" value="descalçar"><metamark>+</metamark></ref>
+                        <ref type="form" scope="currentEntry" value="descalçar"
+                              ><metamark>+</metamark></ref>
                         <seg>as botas</seg>
                      </orth>
                      <gramGrp>
@@ -642,7 +644,8 @@
                <form type="collocations">
                   <form type="collocation">
                      <orth>
-                        <ref type="form" scope="currentEntry" value="descalçar"><metamark>+</metamark></ref>
+                        <ref type="form" scope="currentEntry" value="descalçar"
+                              ><metamark>+</metamark></ref>
                         <seg>os sapatos</seg>
                      </orth>
                      <gramGrp>
@@ -667,11 +670,11 @@
                   <form><orth>chien</orth></form>
                </cit>
                <cit type="example" xml:lang="fr">
-                  <quote> Le matin j'ouvre au <ref type="oRef">chien</ref> et je lui fais manger sa
+                  <quote>Le matin j'ouvre au <ref type="oRef">chien</ref> et je lui fais manger sa
                      soupe. Le soir je lui siffle de venir se coucher</quote>
                   <bibl>RENARD, Poil de Carotte, 1894, p. 102.</bibl>
                   <cit type="translation" xml:lang="en">
-                     <!-- included in the french cit, otherwise relation is lost -->
+                     <!-- included in the french cit, otherwise the relation is lost -->
                      <quote>In the morning, I open the door for the dog, and I <!--...--></quote>
                   </cit>
                </cit>
@@ -687,7 +690,7 @@
                   <quote>6. Les fleuristes, murmura Lorilleux, toutes des Marie-couche-toi-là. Eh
                      bien! Et moi? reprit la grande veuve, les lèvres pincées. Vous êtes galant.
                      Vous savez, je ne suis pas une <ref type="oRef">chienne</ref>, je ne me mets
-                     pas les pattes en l'air, quand on siffle! </quote>
+                     pas les pattes en l'air, quand on siffle!</quote>
                   <bibl>ZOLA, L'Assommoir, 1877, p. 681.</bibl>
                   <cit type="translation" xml:lang="en">
                      <quote><!--...--></quote>
@@ -925,7 +928,8 @@
                </cit>
             </sense>
          </entry>
-         <entry xmlns="http://www.tei-c.org/ns/1.0" xml:id="MORAIS.1.DLP.JANTAR" type="mainEntry" xml:lang="pt">
+         <entry xmlns="http://www.tei-c.org/ns/1.0" xml:id="MORAIS.1.DLP.JANTAR" type="mainEntry"
+            xml:lang="pt">
             <entry xml:id="MORAIS.1.DLP.JANTAR-vt" type="homonymicEntry" xml:lang="pt">
                <form type="lemma">
                   <orth>JANTAR</orth>
@@ -949,12 +953,14 @@
                   <gram type="gen">m.</gram>
                </gramGrp>
                <sense xml:id="MORAIS.1.DLP.JANTAR.s.2">
-                  <def>a ſegunda das tres comidas regulares do dia, entre o almoço , e aceia , ou antes da merenda.</def>
+                  <def>a ſegunda das tres comidas regulares do dia, entre o almoço , e aceia , ou
+                     antes da merenda.</def>
                </sense>
                <pc>.</pc>
                <metamark function="senseDelimiter">§</metamark>
                <sense xml:id="MORAIS.1.DLP.JANTAR.s.3">
-                  <def>Porção de dinheiro , que as Villas , e Cidades davão aos Reis , quando hião de correição para ſuſtento de ſua comitiva</def>
+                  <def>Porção de dinheiro , que as Villas , e Cidades davão aos Reis , quando hião
+                     de correição para ſuſtento de ſua comitiva</def>
                </sense>
                <pc>.</pc>
                <bibl type="attestation" source="#M._L._Monarchia_Luſitana">
@@ -973,6 +979,24 @@
                <orth>Katze</orth>
             </form>
             <!--...-->
+         </entry>
+         <!--simplified for landing page-->
+         <entry xml:id="SJ.GDEL" xml:lang="en" type="mainEntry">
+            <form type="entry">
+               <orth>Lexicographer</orth>
+            </form>
+            <gramGrp>
+               <gram type="pos" norm="noun">n.s.</gram>
+            </gramGrp>
+            <sense xml:id="SJ.GDEL.l20s4b">
+               <def>A writer of dictionaries; a harmless drudge, that busies himself in tracing the
+                  original, and detailing the signification of words.</def>
+               <cit type="example">
+                  <quote>Commentators and <ref type="entry">lexicographers</ref> acquainted with the
+                     Syriac language, have given these hints in their writings on scripture.</quote>
+                  <bibl ref="#Watts.IoM">Watts.</bibl>
+               </cit>
+            </sense>
          </entry>
          <entry xml:id="LDOCE.living" xml:lang="en" type="mainEntry">
             <form type="lemma"><orth>living</orth></form>
@@ -1006,9 +1030,7 @@
                <form type="variant" xml:lang="mix-x-YCNY">
                   <orth>Ntua</orth>
                   <pron notation="ipa">nd̪ùá</pron>
-                  <usg type="geographic">
-                     Yucanany
-                  </usg>
+                  <usg type="geographic"> Yucanany </usg>
                </form>
             </form>
             <gramGrp>
@@ -1488,7 +1510,8 @@
                      <ref type="entry" target="#VSK.SR.мајка">мајка</ref>
                   </xr> била <xr type="related">
                      <ref type="entry" target="VSK.SR.грдан2">грдна</ref>
-                  </xr></def>
+                  </xr>
+               </def>
                <pc>,</pc>
                <cit type="translationEquivalent" xml:lang="de">
                   <form type="lemma">
@@ -1588,54 +1611,54 @@
          <entry xml:lang="cs-x-old" type="mainEntry" xml:id="MSS.leleti">
             <lbl type="condensedLemmas">leleti (sě)</lbl>
             <form type="lemma" resp="#boris">
-               <orth value="leleti" />
+               <orth value="leleti"/>
             </form>
             <form type="lemma" resp="#boris">
-               <orth value="leleti sě" />
+               <orth value="leleti sě"/>
             </form>
             <metamark function="delimiter">, </metamark>
             <lbl type="condensedInflectedForms">-eju, -éš (sě)</lbl>
             <form type="inflected" resp="#boris">
-               <orth value="leleju" />
+               <orth value="leleju"/>
                <gramGrp>
-                  <gram type="person" value="1" />
-                  <gram type="number" value="singular" />
-                  <gram type="tense" value="present" />
-                  <gram type="mood" value="indicative" />
+                  <gram type="person" value="1"/>
+                  <gram type="number" value="singular"/>
+                  <gram type="tense" value="present"/>
+                  <gram type="mood" value="indicative"/>
                </gramGrp>
             </form>
             <form type="inflected" resp="#boris">
-               <orth value="lelejéš" />
+               <orth value="lelejéš"/>
                <gramGrp>
-                  <gram type="person" value="2" />
-                  <gram type="number" value="singular" />
-                  <gram type="tense" value="present" />
-                  <gram type="mood" value="indicative" />
+                  <gram type="person" value="2"/>
+                  <gram type="number" value="singular"/>
+                  <gram type="tense" value="present"/>
+                  <gram type="mood" value="indicative"/>
                </gramGrp>
             </form>
             <form type="inflected">
-               <orth value="leleju sě" resp="#boris" />
+               <orth value="leleju sě" resp="#boris"/>
                <gramGrp>
-                  <gram type="person" value="1" />
-                  <gram type="number" value="singular" />
-                  <gram type="tense" value="present" />
-                  <gram type="mood" value="indicative" />
-                  <gram type="valency" value="reflexive" />
+                  <gram type="person" value="1"/>
+                  <gram type="number" value="singular"/>
+                  <gram type="tense" value="present"/>
+                  <gram type="mood" value="indicative"/>
+                  <gram type="valency" value="reflexive"/>
                </gramGrp>
             </form>
             <form type="inflected">
-               <orth value="lelejéš sě" resp="#boris" />
+               <orth value="lelejéš sě" resp="#boris"/>
                <gramGrp>
-                  <gram type="person" value="2" />
-                  <gram type="number" value="singular" />
-                  <gram type="tense" value="present" />
-                  <gram type="mood" value="indicative" />
-                  <gram type="valency" value="reflexive" />
+                  <gram type="person" value="2"/>
+                  <gram type="number" value="singular"/>
+                  <gram type="tense" value="present"/>
+                  <gram type="mood" value="indicative"/>
+                  <gram type="valency" value="reflexive"/>
                </gramGrp>
             </form>
             <gramGrp>
                <gram type="aspect" expand="nedokonavé" value="imperfective">ned.</gram>
-               <gram type="pos" value="verb" />
+               <gram type="pos" value="verb"/>
             </gramGrp>
             <sense xml:id="MSS.leleti.sense.1">
                <def>vlnit (se), kolébat (se)</def>

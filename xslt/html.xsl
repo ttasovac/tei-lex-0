@@ -14,7 +14,6 @@
     select="'https://unpkg.com/purecss@2.0.3/build/pure-min.css'"/> 
     <xsl:param name="institution" select="'DARIAH Working Group on Lexical Resources'"/>
     
-    
     <xsl:template name="stdfooter"/>
     
     <!--TODO: I've moved some params to xproc, some are here, I will
@@ -26,23 +25,19 @@
     <xsl:param name="headInXref">false</xsl:param>
     <xsl:param name="contentStructure" select="'all'"/>
     <xsl:param name="verbose" select="'true'"/>
-    <xsl:param name="minimalCrossRef">true</xsl:param>
+    <xsl:param name="minimalCrossRef">true</xsl:param>-->
     <xsl:param name="forceWrap">false</xsl:param>
-    <xsl:param name="wrapLength">75</xsl:param>
-    <xsl:param name="attLength">80</xsl:param>
-    <xsl:param name="splitLevel">2</xsl:param>-->
+    <!-- with forceWrap false wrapLength plays no role -->
+    <!-- <xsl:param name="wrapLength">80</xsl:param> -->
+    <xsl:param name="attLength">1200</xsl:param>
     <!-- Only apply splitLevel inside this div; other divs use splitLevelNonSpec. -->
     <xsl:param name="splitOnlyID" select="'specification'"/>
     <xsl:param name="splitLevelNonSpec" select="'0'"/>
     <xsl:param name="outputMethod" select="'html'"/>
     <xsl:param name="tocFront" select="'false'"/>
     
-    <xsl:import href="https://www.tei-c.org/release/xml/tei/stylesheet/html/html.xsl"/>
-    
     <xsl:variable name="version" select="//tei:fileDesc/tei:editionStmt/tei:edition/@n"/>
-    
-    <!--Starting without additional customizations or styling to get a clean look first-->
-    
+    <xsl:import href="https://www.tei-c.org/release/xml/tei/stylesheet/html/html.xsl"/>
     <xsl:import href="includes/layout.xsl"/>
     <xsl:import href="includes/pageHeader.xsl"/>
     <xsl:import href="includes/toc.xsl"/>
@@ -66,6 +61,5 @@
     <xsl:template name="headHook">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </xsl:template>
-
-   
+ 
 </xsl:stylesheet>
