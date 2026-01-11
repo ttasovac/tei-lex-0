@@ -704,6 +704,10 @@ span.label {
   line-height: 18px;
 }
 
+#docsearch .DocSearch-Button-Key:last-child {
+  font-size: 0.75em;
+}
+
 /*labels in revision history*/
 
 .button-xsmall {
