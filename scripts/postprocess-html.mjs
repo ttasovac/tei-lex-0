@@ -114,13 +114,13 @@ const minifyHtml = (html) => {
 const addCanonicalLink = (html, canonicalUrl) => {
   if (hasCanonical(html)) return html;
   const tag = `<link rel="canonical" href="${canonicalUrl}">`;
-  return insertBefore(html, /<\/head>/i, `${tag}\\n`);
+  return insertBefore(html, /<\/head>/i, `${tag}\n`);
 };
 
 const addMetaRobots = (html, content) => {
   if (hasMetaRobots(html)) return html;
   const tag = `<meta name="robots" content="${content}">`;
-  return insertBefore(html, /<\/head>/i, `${tag}\\n`);
+  return insertBefore(html, /<\/head>/i, `${tag}\n`);
 };
 
 const insertBanner = (html, banner) => {
@@ -164,9 +164,9 @@ const ensureRobots = async () => {
   const robotsPath = path.join(ROOT_DIR, "robots.txt");
   let content = "";
   if (mode === "main") {
-    content = `User-agent: *\\nAllow: /\\nSitemap: ${BASE_URL}/sitemap.xml\\n`;
+    content = `User-agent: *\nAllow: /\nSitemap: ${BASE_URL}/sitemap.xml\n`;
   } else {
-    content = "User-agent: *\\nDisallow: /\\n";
+    content = "User-agent: *\nDisallow: /\n";
   }
   await fs.writeFile(robotsPath, content, "utf-8");
 };
@@ -178,7 +178,7 @@ const writeSitemap = async (urls) => {
     ...urls.map((u) => `  <url><loc>${u}</loc></url>`),
     "</urlset>",
     "",
-  ].join("\\n");
+  ].join("\n");
   await fs.writeFile(path.join(ROOT_DIR, "sitemap.xml"), xml, "utf-8");
 };
 
