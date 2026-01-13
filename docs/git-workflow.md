@@ -7,6 +7,11 @@ Goal: keep `dev` and `main` strictly linear; only feature branches get rebased/f
 - **CLI:** `git checkout dev && git pull && git checkout -b feature/xyz`
 - **GitHub Desktop:** Switch to `dev` → Branch > New Branch (base on `dev`)
 
+## Always target dev in PRs
+
+- **CLI:** `gh pr create --base dev`
+- **GitHub Desktop:** Create PR (will default to targeting `main`), then change manually online.
+
 ## Stay current (rebase feature onto dev)
 
 - **When:** work on your feature and commit freely; when you’re ready to open a PR, rebase onto `dev` only if `dev` is ahead of your feature. If `dev` hasn’t moved past your branch point, just open the PR without rebasing.
