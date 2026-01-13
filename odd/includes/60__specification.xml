@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="../css/tei_oxygen.css"?>
-<?xml-stylesheet type="text/css" href="../css/tei.lex0.odd.css"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
     xml:id="specification">
     <head>Specification</head>
@@ -118,7 +116,7 @@
                 <alternate minOccurs="1" maxOccurs="unbounded">
                     <classRef key="model.quoteLike"/>
                     <!--we don't need `eg` or `egXML` in cit-->
-                    <!--<classRef key="model.egLike"/>--> 	
+                    <!--<classRef key="model.egLike"/>-->
                     <classRef key="model.biblLike"/>
                     <classRef key="model.ptrLike"/>
                     <classRef key="model.global"/>
@@ -263,7 +261,7 @@
             <content>
                 <elementRef key="measure" minOccurs="1" maxOccurs="unbounded"/>
             </content>
-            <exemplum versionDate="2016-11-04" xml:lang="en">
+            <exemplum versionDate="2016-11-04" xml:lang="en" type="P5">
                 <p>The <gi>extent</gi> element may be used to supply normalized or machine tractable
                     versions of the size or sizes concerned.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-extent-egXML-ig">
@@ -273,7 +271,7 @@
                     </extent>
                 </egXML>
             </exemplum>
-            <exemplum versionDate="2025-12-07" xml:lang="en">
+            <exemplum versionDate="2025-12-07" xml:lang="en" type="lex0">
                 <p>The <gi>extent</gi> element may be used to supply statistical information about a
                     given dictionary.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-extent-egXML-si">
@@ -432,7 +430,7 @@
             <content>
                 <macroRef key="macro.lexParaContent"/>
             </content>
-            <exemplum>
+            <exemplum type="lex0">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="d1e5322">
                     <cit type="cognate">
                         <lang>dän.</lang>
@@ -442,7 +440,7 @@
                     </cit>
                 </egXML>
             </exemplum>
-            <exemplum>
+            <exemplum type="lex0">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="d1e5340">
                     <cit type="etymon">
                         <lang>mhd.</lang>
@@ -505,17 +503,16 @@
                 </attDef>
                 <attDef ident="status"/>
             </attList>
-            <exemplum>
+            <exemplum type="lex0">
                 <p>When the human-readable name(s) of languages are provided in multiple languages,
                     the attribute <att>xml:lang</att> should be used on <gi>language</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <xi:include
-                        href="../examples/headers/LanguageProfileExamples.stripped.xml"
+                    <xi:include href="../examples/headers/LanguageProfileExamples.stripped.xml"
                         corresp="../examples/headers/LanguageProfileExamples.xml"
                         xpointer="element(/1/1/2/1)"/>
                 </egXML>
             </exemplum>
-            <exemplum>
+            <exemplum type="lex0">
                 <p>Bilingual or multilingual dictionaries could be documented as having two or more
                     object languages. In those cases, however, it is recommended -- and more precise
                     -- to describe each object language as either a source language or a target
@@ -530,14 +527,13 @@
                     </langUsage>
                 </egXML>
             </exemplum>
-            <exemplum>
+            <exemplum type="lex0">
                 <p>The <att>ident</att> attribute is required and is used to indicate the language
                     code used for the given lanuguage variety in the rest of the dictionary. If
                     multiple language identifiers exist for the given language variety, they should
                     be encoded using the <gi>ident</gi> element.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <xi:include
-                        href="../examples/headers/LanguageProfileExamples.stripped.xml"
+                    <xi:include href="../examples/headers/LanguageProfileExamples.stripped.xml"
                         corresp="../examples/headers/LanguageProfileExamples.xml"
                         xpointer="element(/1/1/2/2)"/>
                 </egXML>
@@ -570,7 +566,7 @@
                     <elementRef key="language" minOccurs="1" maxOccurs="unbounded"/>
                 </sequence>
             </content>
-            <exemplum>
+            <exemplum type="lex0">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <langUsage>
                         <language ident="chu" role="sourceLanguage"><name>Old Church
@@ -635,14 +631,14 @@
             <content>
                 <textNode/>
             </content>
-            <exemplum>
+            <exemplum type="P5">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <extent>
                         <measure unit="pages" quantity="210">210 pp.</measure>
                     </extent>
                 </egXML>
             </exemplum>
-            <exemplum versionDate="2025-12-07" xml:lang="en">
+            <exemplum versionDate="2025-12-07" xml:lang="en" type="lex0">
                 <p>The <gi>extent</gi> element may be used to supply statistical information about a
                     given dictionary.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-extent-egXML-si2">
@@ -833,7 +829,7 @@
             <content>
                 <elementRef key="listBibl" minOccurs="1" maxOccurs="unbounded"/>
             </content>
-            <exemplum>
+            <exemplum type="lex0">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="sw34hfa">
                     <sourceDesc>
                         <biblStruct>
@@ -974,13 +970,11 @@
                     </valList>
                 </attDef>
             </attList>
-            <exemplum>
+            <exemplum type="lex0">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <form>
-                        <form>
-                            <usg type="geographic">U.S.</usg>
-                            <orth>color</orth>
-                        </form>
+                    <form type="lemma">
+                        <usg type="geographic">U.S.</usg>
+                        <orth>color</orth>
                     </form>
                 </egXML>
             </exemplum>
@@ -1208,7 +1202,7 @@
                     -->
         <classSpec ident="att.declaring" type="atts" mode="delete"/>
         <classSpec ident="att.fragmentable" type="atts" mode="change">
-            <exemplum>
+            <exemplum type="lex0">
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <etym>
                         <seg type="desc" part="I">seit dem</seg>
@@ -1288,8 +1282,10 @@
                     <!--<classRef key="model.global"/>-->
                     <!--<elementRef key="lg"/>-->
                     <!--<classRef key="model.lLike"/>-->
-                    <classRef key="model.ptrLike"/> <!--[`ref`]-->
-                    <classRef key="model.segLike"/> <!--[`c` `pc` `seg`]-->
+                    <classRef key="model.ptrLike"/>
+                    <!--[`ref`]-->
+                    <classRef key="model.segLike"/>
+                    <!--[`c` `pc` `seg`]-->
                     <elementRef key="gloss"/>
                     <elementRef key="ruby"/>
                     <elementRef key="xr"/>
