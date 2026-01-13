@@ -62,10 +62,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </xsl:template>
  
+    <xsl:template match="tei:label[@rend = 'exampleSource']">
+        <xsl:variable name="value" select="normalize-space(string-join(.//text(), ''))"/>
+        <xsl:element name="button" namespace="http://www.w3.org/1999/xhtml">
+            <xsl:attribute name="type">button</xsl:attribute>
+            <xsl:attribute name="class">button-xsmall pure-button</xsl:attribute>
+            <xsl:attribute name="title">
+                <xsl:choose>
+                    <xsl:when test="$value = 'P5'">This example comes from TEI P5 and may not necessarily represent the official TEI Lex-0 recommendation.</xsl:when>
+                    <xsl:when test="$value = 'Lex-0'">This is a TEI Lex-0 example.</xsl:when>
+                    <xsl:otherwise/>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:value-of select="$value"/>
+        </xsl:element>
+    </xsl:template>
+
     <xsl:template match="tei:label">
         <xsl:element name="span" namespace="http://www.w3.org/1999/xhtml">
             <xsl:attribute name="class">button-xsmall pure-button</xsl:attribute>
-            <xsl:apply-templates></xsl:apply-templates>
+            <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
