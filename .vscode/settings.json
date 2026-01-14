@@ -3,6 +3,7 @@
   "cSpell.words": [
     "corresp",
     "elexis",
+    "maintitle",
     "multicolumn",
     "noindexed",
     "onfocus",
@@ -44,9 +45,7 @@
   "peacock.color": "#007fff",
   "markdownlint.config": {
     "MD033": {
-      "allowed_elements": [
-        "img"
-      ]
+      "allowed_elements": ["img"]
     }
   }
 }

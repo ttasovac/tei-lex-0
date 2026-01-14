@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:teix="http://www.tei-c.org/ns/Examples"
+    xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="3.0"
-    exclude-result-prefixes="tei teix">
+    exclude-result-prefixes="tei teix xs">
 
     <doc xmlns="http://www.oxygenxml.com/ns/doc/xsl">
         <desc>[html] Make a new page using multicolumn layout <param name="currentID">current
@@ -150,36 +150,169 @@
                 </div>
 
                 <div class="footer">
+
                     <div class="footer-inner">
-                        <div class="footer-labels">
-                            <div class="footer-label">maintained by</div>
-                            <div class="footer-label">licensed under</div>
-                            <div class="footer-label">hosted by</div>
-                        </div>
 
-                        <div class="footer-logos">
-                            <div class="footer-left">
-                                <a href="#" class="footer-logo footer-logo-dariah"
-                                    aria-label="On behalf of DARIAH Lexical Resources">
-                                    <img src="images/dariah-lr-blue.png"
-                                        alt="DARIAH Lexical Resources"/>
+                        <div class="footer-text-row">
+                            <xsl:call-template name="makeHTMLHeading">
+	                                <xsl:with-param name="class">footer-odd-title</xsl:with-param>
+		                                <xsl:with-param name="text">
+		                                    <xsl:sequence
+		                                        select="upper-case(normalize-space(string-join(tei:generateSimpleTitle(.) ! string(.), ' ')))"
+		                                    />
+		                                </xsl:with-param>
+		                                <xsl:with-param name="level">2</xsl:with-param>
+		                            </xsl:call-template>
+
+	                            <xsl:variable name="subtitleText" as="xs:string"
+	                                select="
+	                                    replace(
+	                                        normalize-space(string-join(tei:generateSubTitle(.) ! normalize-space(string(.)), ' ')),
+	                                        '^[—–-] *',
+	                                        ''
+	                                    )"/>
+		                            <xsl:if test="$subtitleText != ''">
+		                                <div class="footer-odd-subtitle">
+		                                    <xsl:value-of select="lower-case($subtitleText)"/>
+		                                </div>
+		                            </xsl:if>
+			                        </div>
+
+                        <div class="xs-mobile">
+                            <div class="xs-mobile-row xs-mobile-row-top">
+                                <a href="https://tei-c.org/" class="footer-logo footer-logo-tei"
+                                    aria-label="Built with TEI">
+                                    <img src="images/TEI_logo_xs.png" alt="TEI"/>
                                 </a>
-                            </div>
-
-                            <div class="footer-center">
                                 <a href="https://creativecommons.org/licenses/by/4.0/"
                                     class="footer-logo footer-logo-cc-by"
                                     aria-label="Licensed under CC-BY">
                                     <img src="images/by.png" alt="CC-BY"/>
                                 </a>
+                                <a href="https://github.com/bcdh/tei-lex-0" class="footer-logo footer-logo-github"
+                                    aria-label="Source code on GitHub">
+                                    <img src="images/github.png" alt="GitHub"/>
+                                </a>
                             </div>
 
-                            <div class="footer-right">
-                                <a href="https://humanistika.org"
-                                    class="footer-logo footer-logo-bcdh" aria-label="Hosted by BCDH">
-                                    <img src="images/BCDH-logo_schmal.png"
-                                        alt="Belgrade Center for Digital Humanities"/>
+                            <div class="xs-mobile-row xs-mobile-row-bottom">
+                                <a href="#" class="footer-logo footer-logo-dariah"
+                                    aria-label="On behalf of DARIAH Lexical Resources">
+                                    <img src="images/dariah-lr-blue.png" alt="DARIAH Lexical Resources"/>
                                 </a>
+                                <a href="https://humanistika.org" class="footer-logo footer-logo-bcdh"
+                                    aria-label="Hosted by BCDH">
+                                    <img src="images/cdhn-logo.webp" alt="Belgrade Center for Digital Humanities"/>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer-mobile">
+                            <div class="footer-builtwith">
+                                <div class="footer-builtwith-labels">
+                                    <div class="footer-builtwith-label">built with</div>
+                                    <div class="footer-builtwith-label">sourced on</div>
+                                </div>
+
+                                <div class="footer-builtwith-logos">
+                                    <div class="footer-builtwith-tei">
+                                        <a href="https://tei-c.org/" class="footer-logo footer-logo-tei"
+                                            aria-label="Built with TEI">
+                                            <img src="images/TEI_logo.png" alt="TEI"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="footer-builtwith-github">
+                                        <a href="https://github.com/bcdh/tei-lex-0"
+                                            class="footer-logo footer-logo-github"
+                                            aria-label="Source code on GitHub">
+                                            <img src="images/github.png" alt="GitHub"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="footer-main">
+                                <div class="footer-main-labels">
+                                    <div class="footer-label">maintained by</div>
+                                    <div class="footer-label">licensed under</div>
+                                    <div class="footer-label">hosted by</div>
+                                </div>
+
+                                <div class="footer-main-logos">
+                                    <div class="footer-left">
+                                        <a href="#" class="footer-logo footer-logo-dariah"
+                                            aria-label="On behalf of DARIAH Lexical Resources">
+                                            <img src="images/dariah-lr-blue.png" alt="DARIAH Lexical Resources"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="footer-center">
+                                        <a href="https://creativecommons.org/licenses/by/4.0/"
+                                            class="footer-logo footer-logo-cc-by"
+                                            aria-label="Licensed under CC-BY">
+                                            <img src="images/by.png" alt="CC-BY"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="footer-right">
+                                        <a href="https://humanistika.org"
+                                            class="footer-logo footer-logo-bcdh" aria-label="Hosted by BCDH">
+                                            <img src="images/cdhn-logo.webp"
+                                                alt="Belgrade Center for Digital Humanities"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-desktop">
+                            <div class="footer-desktop-labels">
+                                <div class="footer-desktop-label footer-label">maintained by</div>
+                                <div class="footer-desktop-label footer-label">built with</div>
+                                <div class="footer-desktop-label footer-label">licensed under</div>
+                                <div class="footer-desktop-label footer-label">sourced on</div>
+                                <div class="footer-desktop-label footer-label">hosted by</div>
+                            </div>
+
+                            <div class="footer-desktop-logos">
+                                <div class="footer-desktop-logo footer-desktop-logo-dariah">
+                                    <a href="#" class="footer-logo footer-logo-dariah"
+                                        aria-label="On behalf of DARIAH Lexical Resources">
+                                        <img src="images/dariah-lr-blue.png" alt="DARIAH Lexical Resources"/>
+                                    </a>
+                                </div>
+
+                                <div class="footer-desktop-logo footer-desktop-logo-tei">
+                                    <a href="https://tei-c.org/" class="footer-logo footer-logo-tei"
+                                        aria-label="Built with TEI">
+                                        <img src="images/TEI_logo.png" alt="TEI"/>
+                                    </a>
+                                </div>
+
+                                <div class="footer-desktop-logo footer-desktop-logo-cc">
+                                    <a href="https://creativecommons.org/licenses/by/4.0/"
+                                        class="footer-logo footer-logo-cc-by"
+                                        aria-label="Licensed under CC-BY">
+                                        <img src="images/by.png" alt="CC-BY"/>
+                                    </a>
+                                </div>
+
+                                <div class="footer-desktop-logo footer-desktop-logo-github">
+                                    <a href="https://github.com/bcdh/tei-lex-0"
+                                        class="footer-logo footer-logo-github"
+                                        aria-label="Source code on GitHub">
+                                        <img src="images/github.png" alt="GitHub"/>
+                                    </a>
+                                </div>
+
+                                <div class="footer-desktop-logo footer-desktop-logo-bcdh">
+                                    <a href="https://humanistika.org"
+                                        class="footer-logo footer-logo-bcdh" aria-label="Hosted by BCDH">
+                                        <img src="images/cdhn-logo.webp"
+                                            alt="Belgrade Center for Digital Humanities"/>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -110,4 +110,4 @@ You can run these transformations regardless of your currently open file. If you
 
 TEI Lex-0 is maintained by the DARIAH Working Group on Lexical Resources.
 
-<img src="assets/images/dariah-lr-blue.png" alt="DARIAH Working Group on Lexical Resources" width="200">
+<img src="assets/images/dariah-lr-blue.png" alt="DARIAH Working Group on Lexical Resources" width="200" style="display:block; margin:auto">

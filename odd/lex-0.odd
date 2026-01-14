@@ -11,7 +11,7 @@
         <fileDesc>
             <titleStmt>
                 <title>TEI Lex-0</title>
-                <title type="subordinate">A baseline encoding for lexicograpic data</title>
+                <title type="subordinate">A baseline encoding for lexicographic data</title>
                 <title type="tagline">Clarity for lexicographers. Stability for data. Compatibility for the future.</title>
                 <editor>
                     <persName>
