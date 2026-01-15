@@ -7,7 +7,7 @@ Goal: keep `dev` and `main` strictly linear with rebase-only PR merges, publish 
 - Set up [required settings](#required-github-settings) on GitHub
 - **Publish to dev site:** merge PRs into `dev` (rebase-only) → pushing to `dev` triggers deployment to `dev.lex0.org`.
 - **Publish to production site:** fast-forward `main` to `dev` → pushing to `main` triggers deployment to `lex0.org`.
-- **Publish an immutable release:** create an **annotated** tag `vX.Y.Z` on `main` and push the tag → GitHub Actions publishes to `gh-pages/releases/vX.Y.Z/` and updates `RELEASES.md`.
+- **Publish an immutable release:** create an **annotated** tag `vX.Y.Z` on `main` and push the tag → GitHub Actions publishes to `gh-pages/releases/vX.Y.Z/` and updates the releases index on `gh-pages`.
 
 ## Feature branch creation
 
@@ -63,7 +63,6 @@ Releases are immutable snapshots published under `lex0.org/releases/vX.Y.Z/` (Gi
 
    - Publishes `build/html` to `gh-pages/releases/vX.Y.Z/`
    - Regenerates `gh-pages/releases/index.html`
-   - Appends the release URL to `RELEASES.md` on `main`
 
 5. Verify:
 

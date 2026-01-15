@@ -92,8 +92,7 @@ Publishing rules:
 - Clean destination branches before copying to avoid stale files.
 - Append commits when publishing to `vercel-main` and `vercel-dev`.
 - For tags, fail if the release folder already exists.
-- `releases/index.html` is generated in the tag workflow on `gh-pages`.
-- `RELEASES.md` in `main` is updated only after a successful tag publish.
+- `releases/index.html` in `gh-pages` is regenerated on every successful tag publish.
 
 ## Release banner behavior
 

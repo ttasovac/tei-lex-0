@@ -343,6 +343,7 @@ jobs:
         run: |
           set -euo pipefail
           git fetch origin main
+          git fetch --tags --force
           if [ "$(git cat-file -t "${GITHUB_REF_NAME}")" != "tag" ]; then
             echo "Tag ${GITHUB_REF_NAME} is not annotated."
             exit 1
@@ -433,6 +434,8 @@ jobs:
         run: |
           set -euo pipefail
           RELEASE_TAG="${GITHUB_REF_NAME}"
+          RELEASE_TAGS="$(git tag --list 'v*' --sort=-version:refname)"
+          export RELEASE_TAGS
           mkdir -p .deploy-pages
           cd .deploy-pages
           git init
@@ -459,28 +462,3 @@ jobs:
           fi
           git commit -m "Publish ${RELEASE_TAG}"
           git push origin gh-pages
-      - name: Update RELEASES.md on main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          RELEASE_TAG="${GITHUB_REF_NAME}"
-          TMPDIR="$(mktemp -d)"
-          git clone --branch main "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$TMPDIR"
-          cd "$TMPDIR"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          RELEASES_FILE="RELEASES.md"
-          URL="https://lex0.org/releases/${RELEASE_TAG}/"
-          if [ ! -f "$RELEASES_FILE" ]; then
-            echo "# Releases" > "$RELEASES_FILE"
-            echo "" >> "$RELEASES_FILE"
-          fi
-          if grep -q "$URL" "$RELEASES_FILE"; then
-            echo "Release already listed."
-            exit 0
-          fi
-          echo "- ${RELEASE_TAG}: ${URL}" >> "$RELEASES_FILE"
-          git add "$RELEASES_FILE"
-          git commit -m "Add ${RELEASE_TAG} release URL"
-          git push origin main

@@ -1,12 +1,40 @@
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
+
+function getReleaseTags() {
+  const fromEnv = process.env.RELEASE_TAGS;
+  if (fromEnv && fromEnv.trim()) {
+    return fromEnv
+      .split(/\r?\n/g)
+      .map((t) => t.trim())
+      .filter(Boolean);
+  }
+
+  try {
+    const out = execFileSync(
+      "git",
+      ["tag", "--list", "v*", "--sort=-version:refname"],
+      { encoding: "utf-8" },
+    );
+    return out
+      .split(/\r?\n/g)
+      .map((t) => t.trim())
+      .filter(Boolean);
+  } catch {
+    return null;
+  }
+}
 
 const releasesDir = path.join(process.cwd(), "releases");
-const entries = fs
-  .readdirSync(releasesDir, { withFileTypes: true })
-  .filter((d) => d.isDirectory())
-  .map((d) => d.name)
-  .sort();
+const tags = getReleaseTags();
+const entries =
+  tags ??
+  fs
+    .readdirSync(releasesDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort();
 
 const items = entries
   .map((name) => `<li><a href="${name}/">${name}</a></li>`)
